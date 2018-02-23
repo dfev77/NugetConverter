@@ -67,7 +67,7 @@ namespace Ullink.NugetConverter.services
             var packageName = NugetRepository + assemblyId.Key.Item2 + NugetSeparator + assemblyId.Key.Item1 + ".nupkg";
             if (_useCache && File.Exists(packageName))
             {
-                Trace.TraceInformation("Creation of {0} skipped already in local cache", packageName);
+                Trace.TraceInformation("Creation of {0} skipped already in local cache ({1})", packageName, Path.GetFullPath(packageName));
                 return false;
             }
 
